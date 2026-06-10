@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyron Green | Speaker · Coach · Leader</title>
+  <meta name="description" content="Kyron Green is a dynamic speaker on leadership, faith, and personal growth. Book Kyron for your next event." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --card: #1a1a1a;
+      --gold: #c9a84c;
+      --gold-light: #e5c97a;
+      --white: #ffffff;
+      --gray: #888888;
+      --light-gray: #f5f5f5;
+      --text-muted: #aaaaaa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: padding 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .btn-nav {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      font-weight: 700 !important;
+      letter-spacing: 1.5px !important;
+      transition: background 0.2s !important;
+    }
+    .btn-nav:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 30% 80%, rgba(201,168,76,0.04) 0%, transparent 50%);
+    }
+    .hero-photo-area {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 52%;
+      overflow: hidden;
+    }
+    .hero-photo-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(20%);
+    }
+    .hero-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--black) 0%, rgba(10,10,10,0.5) 50%, transparent 100%);
+    }
+    .hero-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+      font-size: 15px;
+      letter-spacing: 1px;
+      gap: 12px;
+    }
+    .hero-photo-placeholder svg { opacity: 0.3; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 60px 80px;
+      max-width: 680px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 8vw, 110px);
+      line-height: 0.92;
+      letter-spacing: 2px;
+      margin-bottom: 28px;
+    }
+    .hero-title .accent { color: var(--gold); display: block; }
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 44px;
+    }
+    .hero-subtitle strong { color: var(--white); }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 16px 36px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .play-icon {
+      width: 20px; height: 20px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .play-icon::after {
+      content: '';
+      border-left: 7px solid var(--black);
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      margin-left: 2px;
+    }
+
+    /* ── SCROLL INDICATOR ──────────────────────────── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleX(1); opacity: 1; }
+      50% { transform: scaleX(0.5); opacity: 0.4; }
+    }
+
+    /* ── TOPICS STRIP ──────────────────────────────── */
+    .topics-strip {
+      background: var(--gold);
+      padding: 18px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      overflow: hidden;
+    }
+    .topic-item {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 3px;
+      color: var(--black);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topic-dot {
+      width: 6px; height: 6px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+    }
+
+    /* ── SECTION COMMON ────────────────────────────── */
+    section { padding: 100px 60px; }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .section-body {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    /* ── ABOUT ─────────────────────────────────────── */
+    .about {
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-image {
+      position: relative;
+      aspect-ratio: 4/5;
+      background: #1e1e1e;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      gap: 10px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, var(--dark) 0%, transparent 100%);
+    }
+    .about-image-badge {
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
+      z-index: 2;
+      background: var(--gold);
+      color: var(--black);
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .about-text .section-body { margin-bottom: 32px; }
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── SPEAKING TOPICS ───────────────────────────── */
+    .speaking { background: var(--black); }
+    .speaking-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .topic-card {
+      background: var(--card);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .topic-card:hover { background: #222222; }
+    .topic-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .topic-card:hover::before { transform: scaleX(1); }
+    .topic-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 72px;
+      color: rgba(201,168,76,0.1);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .topic-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    .topic-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* ── VIDEO REEL ────────────────────────────────── */
+    .reel {
+      background: var(--dark);
+      text-align: center;
+      padding: 100px 60px;
+    }
+    .reel-inner { max-width: 900px; margin: 0 auto; }
+    .reel .section-eyebrow { justify-content: center; }
+    .reel .section-eyebrow::before { display: none; }
+    .reel .section-title { margin-bottom: 16px; }
+    .reel .section-body { margin: 0 auto 56px; text-align: center; }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #111;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .video-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+      cursor: pointer;
+    }
+    .video-play-btn {
+      width: 80px; height: 80px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .video-play-btn:hover { transform: scale(1.08); background: var(--gold-light); }
+    .video-play-btn::after {
+      content: '';
+      border-left: 28px solid var(--black);
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      margin-left: 6px;
+    }
+    .video-label {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ── TESTIMONIALS ──────────────────────────────── */
+    .testimonials { background: var(--black); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .testimonial-card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: Georgia, serif;
+      font-size: 80px;
+      color: var(--gold);
+      opacity: 0.4;
+      position: absolute;
+      top: 20px;
+      left: 32px;
+      line-height: 1;
+    }
+    .testimonial-quote {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-top: 32px;
+      margin-bottom: 28px;
+    }
+    .testimonial-quote strong { color: var(--white); }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .author-avatar {
+      width: 46px; height: 46px;
+      background: #333;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--gold);
+    }
+    .author-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+    }
+    .author-title {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── BOOKING CTA ───────────────────────────────── */
+    .booking {
+      background: var(--gold);
+      padding: 100px 60px;
+      text-align: center;
+    }
+    .booking .section-eyebrow {
+      color: rgba(0,0,0,0.5);
+      justify-content: center;
+    }
+    .booking .section-eyebrow::before { background: rgba(0,0,0,0.3); }
+    .booking .section-title {
+      color: var(--black);
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .booking-body {
+      font-size: 18px;
+      color: rgba(0,0,0,0.65);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+    .booking-form {
+      display: flex;
+      gap: 0;
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    }
+    .booking-form input {
+      flex: 1;
+      padding: 18px 24px;
+      border: none;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      background: var(--white);
+      color: var(--black);
+    }
+    .booking-form input::placeholder { color: #999; }
+    .booking-form button {
+      background: var(--black);
+      color: var(--gold);
+      padding: 18px 28px;
+      border: none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .booking-form button:hover { background: #1a1a1a; }
+    .booking-or {
+      margin: 24px 0;
+      font-size: 13px;
+      color: rgba(0,0,0,0.4);
+      font-weight: 500;
+    }
+    .btn-book-dark {
+      display: inline-block;
+      background: var(--black);
+      color: var(--gold);
+      padding: 16px 40px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-book-dark:hover { background: #1a1a1a; }
+
+    /* ── FOOTER ────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 60px 60px 40px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 260px;
+      line-height: 1.6;
+    }
+    .footer-nav { display: flex; gap: 60px; }
+    .footer-nav-col h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-nav-col a {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-nav-col a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy { font-size: 12px; color: #555; }
+    .social-links { display: flex; gap: 16px; }
+    .social-link {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 20px 28px; }
+      .nav-links { display: none; }
+      section { padding: 72px 28px; }
+      .hero-content { padding: 120px 28px 80px; max-width: 100%; }
+      .hero-photo-area { width: 100%; opacity: 0.25; }
+      .topics-strip { gap: 32px; padding: 16px 28px; flex-wrap: wrap; justify-content: center; }
+      .about { grid-template-columns: 1fr; gap: 40px; }
+      .about-image { aspect-ratio: 16/9; }
+      .topics-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .speaking-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .footer-inner { flex-direction: column; gap: 40px; }
+      .footer-nav { gap: 32px; flex-wrap: wrap; }
+      .footer-bottom { flex-direction: column; gap: 16px; }
+      .booking-form { flex-direction: column; border-radius: 3px; }
+      .booking-form input, .booking-form button { border-radius: 0; }
+      .about-stats { gap: 24px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">KYRON<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#reel">Watch</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#book" class="btn-nav">Book Kyron</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-photo-area">
+      <img src="yj.jpg" alt="Kyron Green" />
+      <div class="hero-photo-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Speaker · Leader · Storyteller</div>
+      <h1 class="hero-title">
+        KYRON
+        <span class="accent">GREEN</span>
+      </h1>
+      <p class="hero-subtitle">
+        <strong>Transforming audiences</strong> through powerful stories, practical truth, and the kind of energy that stays long after you leave the room.
+      </p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn-primary">Book Kyron</a>
+        <a href="#reel" class="btn-secondary">
+          <span class="play-icon"></span>
+          Watch the Reel
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- TOPICS STRIP -->
+  <div class="topics-strip">
+    <div class="topic-item">Leadership &amp; Culture</div>
+    <div class="topic-dot"></div>
+    <div class="topic-item">Faith &amp; Purpose</div>
+    <div class="topic-dot"></div>
+    <div class="topic-item">Personal Growth &amp; Resilience</div>
+    <div class="topic-dot"></div>
+    <div class="topic-item">Keynote Speaker</div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-image">
+      <!-- REPLACE src with a second professional photo -->
+      <!-- <img src="your-about-photo.jpg" alt="Kyron Green" /> -->
+      <div class="about-image-placeholder">
+        <svg width="48" height="48" fill="none" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="24" r="12" stroke="#555" stroke-width="2"/>
+          <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <img src="kyron-hero.jpg" alt="Kyron Green" />
+      </div>
+      <div class="about-image-badge">Speaker · Leader · Storyteller</div>
+    </div>
+    <div class="about-text">
+      <div class="section-eyebrow">About Kyron</div>
+      <h2 class="section-title">HI, I'M<br/>KYRON GREEN</h2>
+      <p class="section-body">
+        I believe the right message at the right moment can change everything.
+        My work sits at the intersection of <strong style="color:#fff">leadership, faith, and human potential</strong> —
+        and I'm passionate about helping people and organizations unlock what's already inside them.
+      </p>
+      <p class="section-body" style="margin-top:16px">
+        Whether I'm on stage in front of thousands or coaching in a boardroom,
+        I bring the same thing every time: authenticity, energy, and a commitment
+        to leaving every room better than I found it.
+      </p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">500<span style="color:var(--gold-light);font-size:36px">+</span></div>
+          <div class="stat-label">Events</div>
+        </div>
+        <div>
+          <div class="stat-num">100<span style="color:var(--gold-light);font-size:36px">K+</span></div>
+          <div class="stat-label">Lives Impacted</div>
+        </div>
+        <div>
+          <div class="stat-num">15<span style="color:var(--gold-light);font-size:36px">+</span></div>
+          <div class="stat-label">Years Speaking</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING TOPICS -->
+  <section class="speaking" id="speaking">
+    <div class="speaking-header">
+      <div>
+        <div class="section-eyebrow">What Kyron Speaks On</div>
+        <h2 class="section-title">TOPICS THAT<br/>MOVE PEOPLE</h2>
+      </div>
+      <a href="#book" class="btn-primary">Book for Your Event</a>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-num">01</div>
+        <h3 class="topic-title">Leadership &amp; Culture</h3>
+        <p class="topic-desc">Great leaders don't just manage people — they shape culture. Kyron equips leaders with the tools to build teams that thrive, communicate clearly, and drive results that last.</p>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">02</div>
+        <h3 class="topic-title">Faith &amp; Purpose</h3>
+        <p class="topic-desc">At the intersection of belief and action lives the most powerful version of you. Kyron speaks with conviction and authenticity about what it means to live and lead with purpose.</p>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">03</div>
+        <h3 class="topic-title">Personal Growth &amp; Resilience</h3>
+        <p class="topic-desc">Life will test you. The question isn't if — it's how you respond. Kyron delivers practical frameworks for turning setbacks into stepping stones and unlocking your next level.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO REEL -->
+  <section class="reel" id="reel">
+    <div class="reel-inner">
+      <div class="section-eyebrow">See Kyron in Action</div>
+      <h2 class="section-title">WATCH THE REEL</h2>
+      <p class="section-body">
+        A few minutes of footage says more than a thousand words. See the energy, the stories, and the impact Kyron brings to every stage.
+      </p>
+      <!-- REPLACE with your actual YouTube/Vimeo embed URL -->
+      <!-- Example: <div class="video-container"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe></div> -->
+      <div class="video-container">
+        <div class="video-placeholder">
+          <div class="video-play-btn"></div>
+          <div class="video-label">Embed your speaker reel here</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-eyebrow">What People Are Saying</div>
+    <h2 class="section-title">THE IMPACT<br/>SPEAKS FOR ITSELF</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">
+          "Kyron didn't just deliver a keynote — he <strong>changed the temperature in the room</strong>. Our team walked out energized and aligned in a way we hadn't seen in years."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JD</div>
+          <div>
+            <div class="author-name">Jane Doe</div>
+            <div class="author-title">VP of People, [Company] — Replace with real testimonial</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">
+          "We've had a lot of speakers. Kyron is different. He has a rare ability to be <strong>funny, profound, and practical</strong> — all at the same time. Our audience never wanted it to end."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MS</div>
+          <div>
+            <div class="author-name">Mark Smith</div>
+            <div class="author-title">Event Director — Replace with real testimonial</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">
+          "I've been an event planner for 15 years. Kyron is one of the most <strong>prepared and professional</strong> speakers I've ever worked with — and the audience loved every minute."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AL</div>
+          <div>
+            <div class="author-name">Angela Lewis</div>
+            <div class="author-title">Conference Producer — Replace with real testimonial</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">
+          "Kyron spoke at our annual leadership summit and <strong>got a standing ovation</strong>. He took time to understand our culture and tailored every story to speak directly to where we were."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RT</div>
+          <div>
+            <div class="author-name">Robert Thomas</div>
+            <div class="author-title">CEO — Replace with real testimonial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="booking" id="book">
+    <div class="section-eyebrow">Ready to Work Together?</div>
+    <h2 class="section-title">LET'S BRING KYRON TO YOUR EVENT</h2>
+    <p class="booking-body">
+      Whether it's a corporate summit, conference, retreat, or church event — reach out and let's talk about making it unforgettable.
+    </p>
+    <form class="booking-form" onsubmit="handleBooking(event)">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit">Get in Touch</button>
+    </form>
+   <!-- <p class="booking-or">or</p>-->
+    <!-- Replace href with your actual booking link or mailto -->
+    <!--<a href="mailto:hello@kygreenspeaks.com" class="btn-book-dark">Send a Booking Inquiry</a>-->
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="footer-logo">KYRON<span>.</span></a>
+        <p class="footer-tagline">Speaker · Leader · Storyteller<br/>Transforming audiences through truth, energy, and purpose.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-col">
+          <h4>Navigate</h4>
+          <a href="#about">About</a>
+          <a href="#speaking">Speaking</a>
+          <a href="#reel">Watch</a>
+          <a href="#testimonials">Reviews</a>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Work Together</h4>
+          <a href="#book">Book Kyron</a>
+         <!-- <a href="mailto:hello@kygreenspeaks.com">Send an Inquiry</a>-->
+          <a href="https://kygreenspeaks.com">kygreenspeaks.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Kyron Green. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">IG</a>
+        <a href="#" class="social-link" title="LinkedIn">in</a>
+        <a href="#" class="social-link" title="YouTube">YT</a>
+        <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+        <a href="#" class="social-link" title="TikTok">TT</a>
+        <a href="#" class="social-link" title="Beehiiv Newsletter">✉</a>
+        <a href="#" class="social-link" title="Podcast">🎙</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav shrink
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 60) {
+        nav.style.padding = '14px 60px';
+        nav.style.background = 'rgba(10,10,10,0.97)';
+      } else {
+        nav.style.padding = '20px 60px';
+        nav.style.background = 'rgba(10,10,10,0.92)';
+      }
+    });
+
+    // Booking form
+    function handleBooking(e) {
+      e.preventDefault();
+      const email = e.target.querySelector('input').value;
+      // Replace with your actual form submission or mailto logic
+      window.location.href = `mailto:hello@kygreenspeaks.com?subject=Speaking Inquiry&body=My email: ${email}`;
+    }
+
+    // Smooth reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.style.opacity = '1';
+          el.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.topic-card, .testimonial-card, .about-text, .about-image').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
